@@ -35,4 +35,21 @@ client.on('interactionCreate', async interaction => {
 	}
 });
 
+client.on("messageCreate", message => {
+	const prefix = '!';
+    if (message.content.indexOf(prefix) !== 0) {return false};
+
+    const arguments = message.content.slice(prefix.length).trim().split(/ +/g);
+    const cmd = arguments.shift().toLowerCase();
+
+    if (cmd == "청소") {
+        if (!arguments[0]) return message.channel.send("2와 100사이 숫자로")
+        if (arguments[0] < 2 || arguments[0] > 100) return message.channel.send("2와 100사이 숫자로")
+
+        message.channel.bulkDelete(arguments[0]).then(messages => {
+            message.channel.send(`메세지 ${messages.size}개가 삭제됨`);
+        }).catch(e => console.log(e));
+    };
+});
+
 client.login(token);
