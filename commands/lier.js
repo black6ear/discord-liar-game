@@ -18,7 +18,7 @@ module.exports = {
         
         const food = [
             "김밥", "새우튀김", "우동", "라면", "삼겹살", "타코야끼", "피자", "치킨", "탕수육", "짜장면", "도토리묵", "커피", "아이스크림", "제육볶음", "햄버거", "떡볶이", 
-            "짬뽕", "국밥", "빙수", "순대", ""
+            "짬뽕", "국밥", "빙수", "순대", "밥버거"
         ];
         
         const animal = [
@@ -83,8 +83,8 @@ module.exports = {
             );
         
 
-        const channel = interaction.channel
-        const members = channel.members
+        const channel = interaction.member.voice.channel;
+        const members = channel.members;
         var dd = Math.floor(Math.random() * (members.size - 1) + 1);
 
         if (members.size - 1 <= 2) {
@@ -144,7 +144,7 @@ module.exports = {
                   
                   let fb = randomValueFromArray(football);
 
-                  const channel = interaction.channel;
+                  const channel = interaction.member.voice.channel;
                   const members = channel.members;
           
                   //모든 유저에게 키값 랜덤 부여
@@ -197,8 +197,8 @@ module.exports = {
                   }
                   
                   let fd = randomValueFromArray(food);
-
-                  const channel = interaction.channel;
+                  
+                  const channel = interaction.member.voice.channel;
                   const members = channel.members;
           
                   //모든 유저에게 키값 랜덤 부여
@@ -252,7 +252,7 @@ module.exports = {
                   
                   let ani = randomValueFromArray(animal);
 
-                  const channel = interaction.channel;
+                  const channel = interaction.member.voice.channel;
                   const members = channel.members;
           
                   //모든 유저에게 키값 랜덤 부여
@@ -306,7 +306,7 @@ module.exports = {
                   
                   let job = randomValueFromArray(job);
 
-                  const channel = interaction.channel;
+                  const channel = interaction.member.voice.channel;
                   const members = channel.members;
           
                   //모든 유저에게 키값 랜덤 부여
