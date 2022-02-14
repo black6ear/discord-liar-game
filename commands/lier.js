@@ -85,7 +85,7 @@ module.exports = {
 
         const channel = interaction.member.voice.channel;
         const members = channel.members;
-        var dd = Math.floor(Math.random() * (members.size - 1) + 1);
+        var dd = Math.floor(Math.random() * members.size + 1);
 
         if (members.size - 1 <= 2) {
             return interaction.reply({content: "3명이상 가능"})
