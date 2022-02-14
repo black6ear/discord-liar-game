@@ -2,7 +2,41 @@ const fs = require('fs');
 const { Client, Intents, Collection } = require('discord.js');
 const { token } = require('./config.json');
 
-const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_MESSAGE_REACTIONS] });
+const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_MESSAGE_REACTIONS, Intents.FLAGS.GUILD_WEBHOOKS] });
+const { DiscordTogether } = require('discord-together');
+
+client.discordTogether = new DiscordTogether(client);
+
+client.on('messageCreate', async message => { // 'message' for Discord.js v12
+    if (message.content === ';유튜브') {
+        if(message.member.voice.channel) {
+            client.discordTogether.createTogetherCode(message.member.voice.channel.id, 'youtube').then(async invite => {
+                return message.channel.send(`${invite.code}`);
+            });
+        };
+    };
+});
+
+client.on('messageCreate', async message => { // 'message' for Discord.js v12
+    if (message.content === ';포커') {
+        if(message.member.voice.channel) {
+            client.discordTogether.createTogetherCode(message.member.voice.channel.id, 'poker').then(async invite => {
+                return message.channel.send(`${invite.code}`);
+            });
+        };
+    };
+});
+
+client.on('messageCreate', async message => { // 'message' for Discord.js v12
+    if (message.content === ';체스') {
+        if(message.member.voice.channel) {
+            client.discordTogether.createTogetherCode(message.member.voice.channel.id, 'chess').then(async invite => {
+                return message.channel.send(`${invite.code}`);
+            });
+        };
+    };
+});
+
 
 client.commands = new Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
