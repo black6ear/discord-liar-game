@@ -87,7 +87,7 @@ module.exports = {
         const members = channel.members;
         var dd = Math.floor(Math.random() * members.size + 1);
 
-        if (members.size - 1 <= 2) {
+        if (members.size <= 2) {
             return interaction.reply({content: "3명이상 가능"})
         }
         
