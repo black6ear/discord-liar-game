@@ -17,15 +17,23 @@ const rest = new REST({ version: '9' }).setToken(token);
 (async () => {
 	guildIds.map(async (guildId) =>{
 		try {
-
 			await rest.put(	
 				Routes.applicationGuildCommands(clientId, guildId),
-				{ body: commands },
+				{ body: {},}
 			);
-	
-			console.log('Successfully reloaded application (/) commands.');
+			console.log(`${guildId} 서버 성공`);
 		} catch (error) {
 			console.error(error);
 		}
 	});
+
+	try {
+		await rest.put(Routes.applicationCommand(clientID), {
+			body: commands,
+		});
+		console.log('글로벌 명령어 등록 성공')
+	}
+	catch (error) {
+		console.log(error);
+	}
 })();
