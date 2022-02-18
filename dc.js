@@ -28,7 +28,7 @@ const rest = new REST({ version: '9' }).setToken(token);
 	});
 
 	try {
-		await rest.put(Routes.applicationCommand(clientID), {
+		await rest.put(Routes.applicationCommand(clientId), {
 			body: commands,
 		});
 		console.log('글로벌 명령어 등록 성공')
