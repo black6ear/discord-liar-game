@@ -17,4 +17,4 @@
 
 음성채팅에 3명미만일 경우 (봇은 사람수에 취급안됨.)
 
-![image](https://user-images.githubusercontent.com/58897994/180634465-57f0ad82-5614-4ec9-a7eb-7797414f5aa9.png)
+![image](https://user-images.githubusercontent.com/58897994/180634616-417abb93-174d-4291-b074-629d8497d5ab.png)
