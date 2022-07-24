@@ -10,6 +10,8 @@
 
 개인메세지 허용을 안해줄시 봇에 오류가남. 조건문을 추가해서 오류가 나는 것을 방지해주거나 혹은 친구 또는 참가자들에게 개인메세지를 허용해줘라고 해라.
 
+
+## In Play
 ![image](https://user-images.githubusercontent.com/58897994/180634430-783bcf70-7425-4393-9f68-16751bbcf3f6.png)
 
 ![image](https://user-images.githubusercontent.com/58897994/180634415-82f961e5-a407-417c-a199-a37d8e29f60d.png)
