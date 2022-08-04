@@ -7,6 +7,26 @@ const { DiscordTogether } = require('discord-together');
 
 client.discordTogether = new DiscordTogether(client);
 
+client.on('messageCreate', async message => { // 'message' for Discord.js v12
+    if (message.content === ';포커') {
+        if(message.member.voice.channel) {
+            client.discordTogether.createTogetherCode(message.member.voice.channel.id, 'poker').then(async invite => {
+                return message.channel.send(`${invite.code}`);
+            });
+        };
+    };
+});
+
+client.on('messageCreate', async message => { // 'message' for Discord.js v12
+    if (message.content === ';체스') {
+        if(message.member.voice.channel) {
+            client.discordTogether.createTogetherCode(message.member.voice.channel.id, 'chess').then(async invite => {
+                return message.channel.send(`${invite.code}`);
+            });
+        };
+    };
+});
+
 client.commands = new Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
