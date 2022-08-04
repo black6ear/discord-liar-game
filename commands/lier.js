@@ -7,6 +7,10 @@ module.exports = {
 		.setName('라이어게임')
         .setDescription('라이어게임'),
     async execute(interaction) {
+        
+        if (!interaction.member.voice.channel) {
+            return interaction.reply('음성채널에 있어야합니다.')
+        }
 
         const football = [
             "호날두", "메시", "제라드", "솔샤르", "이강인", "박지성", "캉테", "콘테", "레반도프스키", "사비 에르난데스", "이니에스타", "뎀바 바", "케인", "손흥민", 
@@ -88,6 +92,7 @@ module.exports = {
         var dd = Math.floor(Math.random() * members.size + 1);
 
         
+
         if (members.size <= 2) {
             return interaction.reply({content: "3명이상 가능"})
         }
