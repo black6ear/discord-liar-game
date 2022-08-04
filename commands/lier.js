@@ -9,7 +9,7 @@ module.exports = {
     async execute(interaction) {
 
         const football = [
-            "호날두", "메시", "제라드", "솔샤르", "이강인", "박지성", "캉테", "콘테", "레반도프스키", "사비", "이니에스타", "뎀바 바", "케인", "손흥민", 
+            "호날두", "메시", "제라드", "솔샤르", "이강인", "박지성", "캉테", "콘테", "레반도프스키", "사비 에르난데스", "이니에스타", "뎀바 바", "케인", "손흥민", 
             "벤제마", "뱅자민 멘디", "그린우드", "브루누 페르난데스", "포그바", "데헤아", "잭 그릴리쉬", "스털링", "즐라탄", "레스터 시티", "리버풀", "첼시", 
             "맨유", "레알 마드리드", "맨시티", "토트넘", "베일", "김민재", "바이에르 뮌헨", "도르트문트", "웨스트햄", "알렉산더 아놀드", "로버터슨", "반다이크", 
             "홀란드", "음바페", "키미히", "요리스", "레길론", "마운트", "루카쿠", "크라우치", "찰리 아담", "누누 산투", "리즈 유나이티드", "제이미 바디", "지루", 
@@ -87,6 +87,7 @@ module.exports = {
         const members = channel.members;
         var dd = Math.floor(Math.random() * members.size + 1);
 
+        
         if (members.size <= 2) {
             return interaction.reply({content: "3명이상 가능"})
         }
@@ -173,12 +174,16 @@ module.exports = {
                   })
                 //   console.log(arr)
           
-                  arr[0].name.send({content: "당신은 라이어 입니다. 이번 주제는 __**축구**__입니다."})
+                  arr[0].name.send({content: "당신은 라이어 입니다. 이번 주제는 __**축구**__입니다."}).catch((e) => {
+                    interaction.channel.send('설정에서 서버 멤버가 보내는 다이렉트 메시지 허용하기를 켜주세요', e);
+                }) 
                   
                   arr.splice(0,1)
           
                   arr.forEach(member => {
-                      member.name.send({content: `이번 제시어는 ${fb} 입니다.`});
+                      member.name.send({content: `이번 제시어는 ${fb} 입니다.`}).catch((e) => {
+                        interaction.channel.send('설정에서 서버 멤버가 보내는 다이렉트 메시지 허용하기를 켜주세요', e);
+                    }) 
                   }); 
             }
         });
@@ -227,12 +232,16 @@ module.exports = {
                   })
                 //   console.log(arr)
           
-                  arr[0].name.send({content: "당신은 라이어 입니다. 이번 주제는 __**음식**__입니다."})
+                  arr[0].name.send({content: "당신은 라이어 입니다. 이번 주제는 __**음식**__입니다."}).catch((e) => {
+                    interaction.channel.send('설정에서 서버 멤버가 보내는 다이렉트 메시지 허용하기를 켜주세요', e);
+                }) 
                   
                   arr.splice(0,1)
           
                   arr.forEach(member => {
-                      member.name.send({content: `이번 제시어는 ${fd} 입니다.`});
+                      member.name.send({content: `이번 제시어는 ${fd} 입니다.`}).catch((e) => {
+                        interaction.channel.send('설정에서 서버 멤버가 보내는 다이렉트 메시지 허용하기를 켜주세요', e);
+                    }) 
                   }); 
             }
         });
@@ -281,12 +290,16 @@ module.exports = {
                   })
                 //   console.log(arr)
           
-                  arr[0].name.send({content: "당신은 라이어 입니다. 이번 주제는 __**동물**__입니다."})
+                  arr[0].name.send({content: "당신은 라이어 입니다. 이번 주제는 __**동물**__입니다."}).catch((e) => {
+                    interaction.channel.send('설정에서 서버 멤버가 보내는 다이렉트 메시지 허용하기를 켜주세요', e);
+                }) 
                   
                   arr.splice(0,1)
           
                   arr.forEach(member => {
-                      member.name.send({content: `이번 제시어는 ${ani} 입니다.`});
+                      member.name.send({content: `이번 제시어는 ${ani} 입니다.`}).catch((e) => {
+                        interaction.channel.send('설정에서 서버 멤버가 보내는 다이렉트 메시지 허용하기를 켜주세요', e);
+                    }) 
                   }); 
             }
         });
@@ -335,12 +348,16 @@ module.exports = {
                   })
                 //   console.log(arr)
           
-                  arr[0].name.send({content: "당신은 라이어 입니다. 이번 주제는 __**직업**__입니다."})
+                  arr[0].name.send({content: "당신은 라이어 입니다. 이번 주제는 __**직업**__입니다."}).catch((e) => {
+                    interaction.channel.send('설정에서 서버 멤버가 보내는 다이렉트 메시지 허용하기를 켜주세요', e);
+                }) 
                   
                   arr.splice(0,1)
           
                   arr.forEach(member => {
-                      member.name.send({content: `이번 제시어는 ${job} 입니다.`});
+                      member.name.send({content: `이번 제시어는 ${job} 입니다.`}).catch((e) => {
+                        interaction.channel.send('설정에서 서버 멤버가 보내는 다이렉트 메시지 허용하기를 켜주세요', e);
+                    }) 
                   }); 
             }
         });
