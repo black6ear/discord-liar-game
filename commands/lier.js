@@ -126,7 +126,7 @@ module.exports = {
 
         await interaction.reply({ ephemeral: false, embeds: [readyEmbed], components: [ready], fetchReply: true });
 
-        const filter = i => i.customId === 'ready';
+        const filter = i => i.customId === 'ready' && i.user.id === interaction.user.id;
 
         const collector = interaction.channel.createMessageComponentCollector({ filter, time: 5000 });
 
@@ -136,7 +136,7 @@ module.exports = {
             }
         });
 
-        const fbfilter = i => i.customId === 'football';
+        const fbfilter = i => i.customId === 'football' && i.user.id === interaction.user.id;
 
         const fbcollector = interaction.channel.createMessageComponentCollector({ fbfilter, time: 10000 });
 
@@ -194,7 +194,7 @@ module.exports = {
             }
         });
         
-        const fdfilter = i => i.customId === 'food';
+        const fdfilter = i => i.customId === 'food' && i.user.id === interaction.user.id;
 
         const fdcollector = interaction.channel.createMessageComponentCollector({ fdfilter, time: 10000 });
 
@@ -252,7 +252,7 @@ module.exports = {
             }
         });
 
-        const afilter = i => i.customId === 'animal';
+        const afilter = i => i.customId === 'animal' && i.user.id === interaction.user.id;
 
         const acollector = interaction.channel.createMessageComponentCollector({ afilter, time: 10000 });
 
@@ -311,7 +311,7 @@ module.exports = {
             }
         });
 
-        const jfilter = i => i.customId === 'job';
+        const jfilter = i => i.customId === 'job' && i.user.id === interaction.user.id;
 
         const jcollector = interaction.channel.createMessageComponentCollector({ jfilter, time: 10000 });
 
