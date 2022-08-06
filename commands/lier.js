@@ -76,7 +76,8 @@ module.exports = {
         .addComponents(
             new MessageButton()
                 .setCustomId('animal')
-                .setLabel('동물')
+                .setLabel('
+			  ')
                 .setStyle('SECONDARY'),
             )
         .addComponents(
@@ -114,7 +115,7 @@ module.exports = {
         const animalEmbed = new MessageEmbed()
             .setColor('#FFB6C1')
             .setTitle('라이어게임')
-            .setDescription(`개인메세지 확인바람. 이번 주제는 __**사물**__입니다. 순서는 ${dd}번째 부터`)
+            .setDescription(`개인메세지 확인바람. 이번 주제는 __**동물**__입니다. 순서는 ${dd}번째 부터`)
             .setTimestamp()
             /* 직업 */
         const jobEmbed = new MessageEmbed()
@@ -295,7 +296,8 @@ module.exports = {
                   })
                 //   console.log(arr)
           
-                  arr[0].name.send({content: "당신은 라이어 입니다. 이번 주제는 __**동물**__입니다."}).catch((e) => {
+                  arr[0].name.send({content: "당신은 라이어 입니다. 이번 주제는 __**
+				    **__입니다."}).catch((e) => {
                     interaction.channel.send('설정에서 서버 멤버가 보내는 다이렉트 메시지 허용하기를 켜주세요', e);
                 }) 
                   
