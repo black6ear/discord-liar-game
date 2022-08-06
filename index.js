@@ -27,6 +27,10 @@ client.on('messageCreate', async message => { // 'message' for Discord.js v12
     };
 });
 
+//쿨타임
+client.cooldowns = new Collection();
+client.COOLDOWN_SECONDS = 2;
+
 client.commands = new Collection();
 const commandFiles = fs.readdirSync('./commands').filter(file => file.endsWith('.js'));
 
